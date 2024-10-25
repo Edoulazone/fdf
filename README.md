@@ -1,1 +1,1 @@
-![3D](https://github.com/Edoulazone/Cursus-42/blob/master/gifs/3D.gif)
+![3D](https://github.com/Edoulazone/gifs/blob/master/3D.gif)
