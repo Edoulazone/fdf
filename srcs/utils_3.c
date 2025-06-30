@@ -6,11 +6,34 @@
 /*   By: eschmitz <eschmitz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 12:13:39 by eschmitz          #+#    #+#             */
-/*   Updated: 2025/06/30 17:54:27 by eschmitz         ###   ########.fr       */
+/*   Updated: 2025/06/30 19:51:18 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+int	count_words(char *str, char delimiter)
+{
+	int	count;
+	int	in_word;
+
+	if (!str)
+		return (0);
+	count = 0;
+	in_word = 0;
+	while (*str)
+	{
+		if (*str != delimiter && !in_word)
+		{
+			in_word = 1;
+			count++;
+		}
+		else if (*str == delimiter)
+			in_word = 0;
+		str++;
+	}
+	return (count);
+}
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

@@ -50,7 +50,11 @@ SRC = main.c \
        utils.c \
        utils_2.c \
 	   utils_3.c \
-	   split.c
+	   utils_4.c \
+	   split.c \
+	   ft_printf.c \
+	   ft_printf_utils.c \
+	   ft_printf_utils_2.c 
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 

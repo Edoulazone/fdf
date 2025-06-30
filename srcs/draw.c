@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:37:28 by eschmitz          #+#    #+#             */
-/*   Updated: 2025/06/30 17:55:29 by eschmitz         ###   ########.fr       */
+/*   Updated: 2025/06/30 18:54:35 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,14 @@ void	init_line(t_line *line, t_point p1, t_point p2)
 {
 	line->dx = abs((int)p2.proj_x - (int)p1.proj_x);
 	line->dy = abs((int)p2.proj_y - (int)p1.proj_y);
-	line->sx = ((int)p1.proj_x < (int)p2.proj_x) ? 1 : -1;
-	line->sy = ((int)p1.proj_y < (int)p2.proj_y) ? 1 : -1;
+	if ((int)p1.proj_x < (int)p2.proj_x)
+		line->sx = 1;
+	else
+		line->sx = -1;
+	if ((int)p1.proj_y < (int)p2.proj_y)
+		line->sy = 1;
+	else
+		line->sy = -1;
 	line->err = line->dx - line->dy;
 }
 

@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:35:37 by eschmitz          #+#    #+#             */
-/*   Updated: 2025/06/30 18:00:28 by eschmitz         ###   ########.fr       */
+/*   Updated: 2025/06/30 20:23:05 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <limits.h>
+# include <stdarg.h>
 # include "../minilibx-linux/mlx.h"
 
 # define WIN_WIDTH 1200
@@ -191,5 +192,17 @@ void	print_usage(void);
 int		check_extension(char *filename);
 int		check_access(char *filename);
 int		validate_file(char *filename);
+
+/* ft_printf.c */
+int	ft_printf(const char *format, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr(int n);
+int	ft_puthex(unsigned long n, char format);
+int	ft_putptr(void *ptr);
+int	ft_putunsigned(unsigned int n);
+int	ft_putfloat(double n, int precision);
+int	ft_handle_format(const char *format, int *i, va_list args);
+int	get_precision(const char *format, int *i);
 
 #endif

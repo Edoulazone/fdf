@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:35:51 by eschmitz          #+#    #+#             */
-/*   Updated: 2025/06/30 17:52:50 by eschmitz         ###   ########.fr       */
+/*   Updated: 2025/06/30 20:02:39 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,11 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	render_map(&fdf);
-	printf("\n=== FDF ===\n");
-	printf("Carte: %s\n", argv[1]);
-	printf("Taille: %dx%d points\n", fdf.map.width, fdf.map.height);
-	printf("Zoom initial: %.2f\n", fdf.zoom);
-	printf("Appuyez sur les touches pour controler!\n");
-	printf("ESC pour quitter\n\n");
+	ft_printf("\n=== FDF ===\n");
+	ft_printf("Carte: %s\n", argv[1]);
+	ft_printf("Taille: %dx%d points\n", fdf.map.width, fdf.map.height);
+	ft_printf("Zoom initial: %.2f\n", fdf.zoom);
+	ft_printf("ESC pour quitter\n\n");
 	mlx_hook(fdf.win, 2, 1L << 0, handle_key, &fdf);
 	mlx_hook(fdf.win, 17, 1L << 17, handle_close, &fdf);
 	mlx_loop(fdf.mlx);

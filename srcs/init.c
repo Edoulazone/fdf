@@ -6,7 +6,7 @@
 /*   By: eschmitz <eschmitz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:36:14 by eschmitz          #+#    #+#             */
-/*   Updated: 2025/06/30 17:55:53 by eschmitz         ###   ########.fr       */
+/*   Updated: 2025/06/30 18:15:09 by eschmitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ float	calc_zoom(t_map *map)
 		return (1.0f);
 	zoom_x = (WIN_WIDTH * 0.8f) / (map->width * 1.5f);
 	zoom_y = (WIN_HEIGHT * 0.8f) / (map->height * 1.5f);
-	zoom = (zoom_x < zoom_y) ? zoom_x : zoom_y;
+	if (zoom_x < zoom_y)
+		zoom = zoom_x;
+	zoom = zoom_y;
 	if (zoom < 1.0f)
 		zoom = 1.0f;
 	else if (zoom > 20.0f)
